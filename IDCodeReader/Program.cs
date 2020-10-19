@@ -13,7 +13,7 @@ namespace IDCodeReader
 
             if(Validate(IDcode))
             {
-                Console.WriteLine("Welcome");
+                HelloUser(IDcode);
             }
             else
             {
@@ -56,6 +56,18 @@ namespace IDCodeReader
             }
 
         }
-
+        public static void GetYear(string IDcode)
+        {
+            string Year;
+            string YearFromCode = IDcode.Substring(1, 2);
+            if (int.Parse(IDcode[0].ToString()) > 4)
+            {
+                Year = "20" + YearFromCode;
+            }
+            else
+            {
+                Year = "19" + YearFromCode;
+            }
+        }
     }
 }
